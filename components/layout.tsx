@@ -64,7 +64,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <meta name="twitter:image:alt" content={imageAlt} />
 
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#ddd" />
+        <meta name="theme-color" content="#202020" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="רדקטעל" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
