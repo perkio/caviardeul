@@ -825,3 +825,13 @@ main {
 footer {
   height: $footerHeight;
 }
+
+.install-instructions {
+  display: none
+}
+
+@media (display-mode: browser) {
+  .install-instructions {
+    display: block
+  }
+}

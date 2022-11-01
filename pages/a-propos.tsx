@@ -89,7 +89,14 @@ const AboutPage: React.FC = () => {
             .
           </p>
         </div>
-        <div className="right-container" />
+        <div className="right-container">
+          <div className="install-instructions">
+              <h3>התקנה</h3>
+              <p>
+                <b>טיפ:</b> ניתן להתקין את רדקטעל כאפליקציית web דרך תפריט הדפדפן
+              </p>
+          </div>
+        </div>
       </main>
     </>
   );

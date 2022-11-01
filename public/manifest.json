@@ -1,6 +1,16 @@
 {
   "name": "רדקטעל",
   "short_name": "רדקטעל",
+  "description": "משחק פענוח מאמר ויקיפדיה יומי",
+  "categories": ["games"],
+  "screenshots" : [
+    {
+      "src": "/caviardeul.png",
+      "sizes": "1050x680",
+      "type": "image/png",
+      "label": "Puzzle"
+    }
+  ],
   "icons": [
     {
       "src": "/icons/manifest-icon-192.maskable.png",
@@ -27,7 +37,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#303040",
+  "theme_color": "#ddd",
   "background_color": "#101010",
   "start_url": "/",
   "display": "standalone",

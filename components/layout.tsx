@@ -63,12 +63,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <meta name="twitter:image" content={imageUrl} />
         <meta name="twitter:image:alt" content={imageAlt} />
 
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#ddd" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="רדקטעל" />
+
         <link rel="icon" type="image/png" sizes="196x196" href="/icons/favicon-196.png" />
         <link rel="manifest" href="/manifest.json" />
 
         <link rel="apple-touch-icon" href="/icons/apple-icon-180.png" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-
         <link rel="apple-touch-startup-image" href="/icons/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
         <link rel="apple-touch-startup-image" href="/icons/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
         <link rel="apple-touch-startup-image" href="/icons/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
