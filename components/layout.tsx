@@ -67,6 +67,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <meta name="theme-color" content="#ddd" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="רדקטעל" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
 
         <link rel="icon" type="image/png" sizes="196x196" href="/icons/favicon-196.png" />
         <link rel="manifest" href="/manifest.json" />
