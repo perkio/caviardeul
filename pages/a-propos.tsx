@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => {
 
           <p>
             משחק זה מוצע בחינם וללא כל פרסום. קוד המקור שלו זמין ב{"-"}
-            <ExternalLink href="https://github.com/perkio/caviardeul">
+            <ExternalLink href="https://github.com/perkio/redactle-he">
               GitHub
             </ExternalLink>
             . והוא מתארח ב{"-"}
@@ -83,7 +83,7 @@ const AboutPage: React.FC = () => {
           <h2>צרו קשר</h2>
           <p>
             לדיווח על באגים או הצעות פנו ל{"-"}
-            <ExternalLink href="https://github.com/perkio/caviardeul/issues">
+            <ExternalLink href="https://github.com/perkio/redactle-he/issues">
               <i>בעיות</i> ב-GitHub
             </ExternalLink>
             .

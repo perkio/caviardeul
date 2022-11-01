@@ -58,7 +58,7 @@ const Navbar: React.FC<{
           </li>
           <li className="divider" />
           <li>
-            <ExternalLink href="https://github.com/perkio/caviardeul">
+            <ExternalLink href="https://github.com/perkio/redactle-he">
               <FaGithub />
             </ExternalLink>
           </li>
