@@ -42,7 +42,7 @@ const commonWords = new Set<string>([
 const punctuationListWithoutQuotes = "–{}()\\[\\]\\\\.…,;:!¡?¿/@#%\\^&*_~+\\-=<>«»\\s";
 const punctuationList = `${punctuationListWithoutQuotes}\"`;
 const wordRegex = new RegExp(`^[^${punctuationListWithoutQuotes}]+$`, "i");
-const separatorRegex = new RegExp(`([${punctuationListWithoutQuotes}]+|(?<![א-ת])\"(?![א-ת])|\"+$|^\"+|(?<=[א-ת])\"+(?=[${punctuationListWithoutQuotes}])|(?<=[${punctuationListWithoutQuotes}])\"|(?<=[${punctuationListWithoutQuotes}][כלבומשה])\"(?=[א-ת]{2})|(?<=^[כלבומשה])\"(?=[א-ת]{2}))`, "gim");
+const separatorRegex = new RegExp(`(\"+[${punctuationListWithoutQuotes}]+|[${punctuationListWithoutQuotes}]+\"+|\"+$|^\"+|[${punctuationListWithoutQuotes}]+)`, "gim");
 export const closeAlternativesSuffixes = ["ים", "ות"];
 export const closeAlternativesPrefixes = ["ב","ה","מ","כ","ש","ו","ל"];
 
@@ -50,7 +50,16 @@ export const splitWords = (
   text: string,
   isMarkdown: boolean = false
 ): string[] => {
-  const splittedText = text.split(separatorRegex).filter(s => s?.length);
+  const preSplittedText = text.split(separatorRegex).filter(s => s?.length);
+  let splittedText: string[] = [];
+  for (let i = 0; i < preSplittedText.length; i++) {
+    if (preSplittedText[i].match(/^[כלבומשה]\"[א-ת]{2,}$/)) {
+      splittedText.push(preSplittedText[i][0], `"`, preSplittedText[i].substring(2))
+    } else {
+      splittedText.push(preSplittedText[i]);
+    }
+  }
+
   const result = [];
 
   if (splittedText.length >= 3 && isMarkdown) {

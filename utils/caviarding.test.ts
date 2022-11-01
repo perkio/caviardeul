@@ -22,17 +22,17 @@ describe("caviarding", () => {
 
   test("splitWords should support hebrew double quote", () => {
     expect(splitWords(`"נמר הכסף"`)).toEqual([`"`, "נמר", " ", "הכסף", `"`]);
-    expect(splitWords(`"באמצע "שלום" מילה".`)).toEqual([`"`, "באמצע", ` `, `"`, `שלום`,  `"`, ` `, `מילה`, `"`, "."]);
-    expect(splitWords(`"באמצע ה"דקר" מילה".`)).toEqual([`"`, "באמצע", ` `, `ה`, `"`, `דקר`,  `"`, ` `, `מילה`, `"`, "."]);
+    expect(splitWords(`"באמצע "שלום" מילה".`)).toEqual([`"`, "באמצע", ` "`, `שלום`,  `" `, `מילה`, `".`]);
+    expect(splitWords(`"באמצע ה"דקר" מילה".`)).toEqual([`"`, "באמצע", ` `, `ה`, `"`, `דקר`,  `" `, `מילה`, `".`]);
     expect(splitWords(`ב"ביצה הלבנונית"`)).toEqual(["ב", `"`, "ביצה", ` `, `הלבנונית`, `"`]);
     expect(splitWords(`ה"ביצה הלבנונית"`)).toEqual(["ה", `"`, "ביצה", ` `, `הלבנונית`, `"`]);
-    expect(splitWords(`ה"ידוע" ל"לא ידוע"`)).toEqual(["ה", `"`, "ידוע", `"`, ` `, 'ל', `"`, "לא", " ", "ידוע", `"`]);
+    expect(splitWords(`ה"ידוע" ל"לא ידוע"`)).toEqual(["ה", `"`, "ידוע", `" `, 'ל', `"`, "לא", " ", "ידוע", `"`]);
   })
 
   test("splitWords should support hebrew double quote initials", () => {
     expect(splitWords(`חז"ל`)).toEqual([`חז"ל`]);
     expect(splitWords(`צה"ל`)).toEqual([`צה"ל`]);
     expect(splitWords(`"מ"מ"`)).toEqual([`"`,  `מ"מ`, `"`]);
-    expect(splitWords(`"באמצע מ"מ מילה".`)).toEqual([`"`, "באמצע", ` `, `מ"מ`,  ` `, `מילה`, `"`, "."]);
+    expect(splitWords(`"באמצע מ"מ מילה".`)).toEqual([`"`, "באמצע", ` `, `מ"מ`,  ` `, `מילה`, `".`]);
   })
 });
