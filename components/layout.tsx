@@ -62,6 +62,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={imageUrl} />
         <meta name="twitter:image:alt" content={imageAlt} />
+
         <link rel="icon" type="image/png" sizes="196x196" href="/icons/favicon-196.png" />
         <link rel="manifest" href="/manifest.json" />
 
