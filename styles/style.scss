@@ -1,5 +1,6 @@
 html,
 body {
+  direction: rtl;  
   padding: 0;
   margin: 0;
   font-family: "Liberation Sans", sans-serif;
@@ -84,7 +85,6 @@ body {
 
 // navbar
 nav {
-  direction: rtl;
   align-items: center;
   background-color: $dark1;
   color: $light4;
@@ -161,10 +161,10 @@ nav {
 
     @include media-max($breakpoint) {
       height: calc(100vh - #{$navbarHeight});
-      left: -100vw;
+      right: -100vw;
       position: absolute;
       top: $navbarHeight;
-      transition: left 0.2s ease-in-out;
+      transition: right 0.2s ease-in-out;
       width: 100vw;
       z-index: 10;
 
@@ -197,7 +197,7 @@ nav {
       }
 
       &.active {
-        left: 0;
+        right: 0;
         .nav-link-background {
           opacity: 0.8;
           width: 100%;
@@ -214,7 +214,6 @@ nav {
 
 // info modal
 .modal-container {
-  direction: rtl;
   animation: 0.2s modal-animation;
   position: absolute;
   top: 0;
@@ -369,7 +368,6 @@ button {
 
 // main
 main {
-  direction: rtl;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -523,7 +521,7 @@ main {
     padding: 0;
     table {
       border-collapse: collapse;
-      text-align: left;
+      text-align: right;
       width: 100%;
 
       thead {
@@ -620,10 +618,6 @@ main {
   .url-input {
     border: 1px solid $light4;
     padding: 10px 0 10px 10px;
-
-    span {
-      direction: ltr;
-    }
 
     input {
       border: 0;
@@ -792,7 +786,6 @@ main {
 }
 
 .modal.sync-modal {
-  direction: rtl;
   input {
     font-family: monospace;
     width: 90%;
@@ -820,7 +813,6 @@ main {
 
 // about
 #about {
-  direction: rtl;
   .left-container {
     color: var(--color-text);
     a {
