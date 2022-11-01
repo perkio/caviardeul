@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import "nprogress/nprogress.css";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { Analytics } from '@vercel/analytics/react';
 
 import Layout from "@caviardeul/components/layout";
 
@@ -25,6 +26,7 @@ const Caviardeul = ({ Component, pageProps }: AppProps) => {
           <Component {...pageProps} />
         </Layout>
       </QueryClientProvider>
+      <Analytics />
     </>
   );
 };
