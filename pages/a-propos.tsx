@@ -89,7 +89,18 @@ const AboutPage: React.FC = () => {
             .
           </p>
         </div>
-        <div className="right-container" />
+        <div className="right-container">
+          <div className="install-instructions">
+              <h3>התקנה על מסך הבית</h3>
+              <p>
+                <b>טיפ: </b>לחווית ממשק משופרת, ניתן להתקין את רדקטעל כאפליקציית רשת (PWA) על מסך הבית דרך תפריט הדפדפן
+                <ul dir="ltr">
+                  <li><b>Safari:</b> Add to Home Screen</li>
+                  <li><b>Chrome:</b> Install app</li>
+                </ul>
+              </p>
+          </div>
+        </div>
       </main>
     </>
   );
