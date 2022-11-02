@@ -39,6 +39,7 @@ const elementsToStripAfter = [
   "h2 #הערות_שוליים",
   "h2 #ביבליוגרפיה",
   "h2 #דירוגים_ופרסים",
+  "h2 #דמויות_נוספות",
   "h2 #Annexes",
   "h2 #Bibliographie",
   "h2 #Notes_et_références",
