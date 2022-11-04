@@ -48,7 +48,7 @@ const SortSelection: React.FC<{
   return (
     <>
       <label>
-        מיון 
+        מיון&nbsp;
         <select
           value={sortBy}
           onChange={({ target: { value } }) => {
@@ -76,7 +76,7 @@ const FilterSelection: React.FC<{
   return (
     <div className="filter-selection">
       <label>
-        סנן
+        סינון&nbsp;
         <select
           value={filterBy}
           onChange={({ target: { value } }) => {
