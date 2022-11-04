@@ -459,20 +459,22 @@ main {
       border: solid 1px var(--color-text);
       position: relative;
 
-      &:nth-of-type(5n) {
-        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-      }
-      &:nth-of-type(5n + 1) {
-        border-radius: 225px 30px 255px 30px/30px 255px 30px 225px;
-      }
-      &:nth-of-type(5n + 2) {
-        border-radius: 200px 30px 255px 20px/20px 215px 30px 250px;
-      }
-      &:nth-of-type(5n + 3) {
-        border-radius: 220px 50px 215px 30px/40px 240px 20px 210px;
-      }
-      &:nth-of-type(5n + 4) {
-        border-radius: 30px 255px 30px 225px/30px 225px 30px 250px;
+      &.decorate-redacted {
+        &:nth-of-type(5n) {
+          border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        &:nth-of-type(5n + 1) {
+          border-radius: 225px 30px 255px 30px/30px 255px 30px 225px;
+        }
+        &:nth-of-type(5n + 2) {
+          border-radius: 200px 30px 255px 20px/20px 215px 30px 250px;
+        }
+        &:nth-of-type(5n + 3) {
+          border-radius: 220px 50px 215px 30px/40px 240px 20px 210px;
+        }
+        &:nth-of-type(5n + 4) {
+          border-radius: 30px 255px 30px 225px/30px 225px 30px 250px;
+        }
       }
 
       &.word-length {

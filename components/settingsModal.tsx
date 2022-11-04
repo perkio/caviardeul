@@ -8,7 +8,7 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
   onClose,
 }) => {
   const { settings, onChangeSettings } = useContext(SettingsContext);
-  const { lightMode, displayWordLength, withCloseAlternatives } =
+  const { lightMode, displayWordLength, withCloseAlternatives, decorateRedacted } =
     settings ?? defaultSettings;
 
   const handleToggleLightMode = useCallback(() => {
@@ -22,6 +22,11 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
   const handleToggleWithCloseAlternatives = useCallback(() => {
     onChangeSettings({ withCloseAlternatives: !withCloseAlternatives });
   }, [withCloseAlternatives, onChangeSettings]);
+
+  const handleToggleDecorateRedacted = useCallback(() => {
+    onChangeSettings({ decorateRedacted: !decorateRedacted });
+  }, [decorateRedacted, onChangeSettings]);
+
 
   if (!open) {
     return null;
@@ -56,6 +61,15 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
             onChange={handleToggleWithCloseAlternatives}
           />
           נחש בתוספת אותיות השימוש וסיומת רבים <span className="beta">בטא</span> 
+        </label>
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            checked={decorateRedacted}
+            onChange={handleToggleDecorateRedacted}
+          />
+          הפעל מצב השחרה מעוצב (עלול לפגוע בביצועים)
         </label>
       </div>
     </Modal>

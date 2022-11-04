@@ -7,6 +7,7 @@ export const defaultSettings: Settings = {
   lightMode: false,
   displayWordLength: true,
   withCloseAlternatives: true,
+  decorateRedacted: false,
 };
 
 export const getInitialSettings = (): Settings => {
@@ -22,6 +23,8 @@ export const getInitialSettings = (): Settings => {
       settings?.displayWordLength ?? defaultSettings.displayWordLength,
     withCloseAlternatives:
       settings?.withCloseAlternatives ?? defaultSettings.withCloseAlternatives,
+    decorateRedacted:
+      settings?.decorateRedacted ?? defaultSettings.decorateRedacted,
   };
 };
 

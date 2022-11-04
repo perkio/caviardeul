@@ -8,7 +8,7 @@ import {
 } from "@caviardeul/utils/settings";
 
 const getColorScheme = (lightMode: boolean): [string, string] => {
-  return lightMode ? ["#eee", "#202020"] : ["#101010", "#ddd"];
+  return lightMode ? ["#eee", "#202020"] : ["#101010", "#999999"];
 };
 
 const SettingsManager: React.FC<{ children: React.ReactNode }> = ({

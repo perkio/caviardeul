@@ -38,7 +38,8 @@ const _WordContainer: React.FC<{ node: any }> = ({ node }) => {
             <span
               className={
                 "word caviarded" +
-                (settings?.displayWordLength ? " word-length" : "")
+                (settings?.displayWordLength ? " word-length" : "") +
+                (settings?.decorateRedacted ? " decorate-redacted" : "")
               }
               data-word-length={word.length}
             >
