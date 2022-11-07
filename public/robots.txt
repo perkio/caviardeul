@@ -3,4 +3,4 @@ Disallow: /api/*
 Disallow: /debug
 Disallow: /login
 
-Sitemap: https://caviardeul/sitemap.xml
+Sitemap: https://redactle.vercel.app/sitemap.xml
