@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import "nprogress/nprogress.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Analytics } from '@vercel/analytics/react';
-import { Roboto, Rubik, Miriam_Libre } from "@next/font/google"
+import { Alef, Arimo, Roboto, Rubik, Miriam_Libre, Noto_Sans_Hebrew } from "@next/font/google"
 
 // const roboto = Roboto({
 //   weight: '400',
@@ -12,8 +12,8 @@ import { Roboto, Rubik, Miriam_Libre } from "@next/font/google"
 import Layout from "@caviardeul/components/layout";
 import "../styles/style.scss";
 
-const font = Miriam_Libre({
-  variable: '--puzzle-font',
+const font = Noto_Sans_Hebrew({
+  variable: '--article-font',
   weight: "400",
   subsets: ["hebrew"]
 })

@@ -4,7 +4,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
-$puzzleFont: var(--puzzle-font), sans-serif;
+$articleFont: var(--article-font), monospace, sans-serif;
 
 html,
 body {
@@ -439,7 +439,7 @@ main {
 
   .article-container {
     color: var(--color-text);
-    font-family: $puzzleFont;
+    font-family: $articleFont;
     font-size: 1.3rem;
     line-height: 2rem;
     height: calc(100vh - #{$navbarHeight + $footerHeight + $guessInputHeight});
@@ -466,6 +466,7 @@ main {
       background-color: var(--color-text);
       border: solid 1px var(--color-text);
       position: relative;
+      font-family: monospace;
 
       &.decorate-redacted {
         &:nth-of-type(5n) {
