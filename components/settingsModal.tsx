@@ -2,13 +2,15 @@ import React, { useCallback, useContext } from "react";
 
 import Modal from "@caviardeul/components/modal";
 import { SettingsContext, defaultSettings } from "@caviardeul/utils/settings";
+import { FontMap } from "./fontManager";
+import { Fonts } from "@caviardeul/types";
 
 const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
   open,
   onClose,
 }) => {
   const { settings, onChangeSettings } = useContext(SettingsContext);
-  const { lightMode, displayWordLength, withCloseAlternatives, decorateRedacted } =
+  const { lightMode, displayWordLength, withCloseAlternatives, decorateRedacted, articleFont } =
     settings ?? defaultSettings;
 
   const handleToggleLightMode = useCallback(() => {
@@ -26,7 +28,6 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
   const handleToggleDecorateRedacted = useCallback(() => {
     onChangeSettings({ decorateRedacted: !decorateRedacted });
   }, [decorateRedacted, onChangeSettings]);
-
 
   if (!open) {
     return null;
@@ -70,6 +71,21 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
             onChange={handleToggleDecorateRedacted}
           />
           הפעל מצב השחרה מעוצב (עלול לפגוע בביצועים)
+        </label>
+        <br />
+        <hr></hr>
+        <label>
+          גופן
+          <select 
+            defaultValue={settings?.articleFont ?? Fonts.default}
+            onChange={ e => onChangeSettings({ articleFont: e.target.value as unknown as Fonts }) } >
+            { Object.entries(FontMap).map( (v) => 
+              <option 
+                key={v[0]}
+                value={v[0]}
+                label={v[1].label}>
+              </option> )}
+          </select>
         </label>
       </div>
     </Modal>

@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-import { Settings, SettingsState } from "@caviardeul/types";
+import { Fonts, Settings, SettingsState } from "@caviardeul/types";
 import SaveManagement from "@caviardeul/utils/save";
 
 export const defaultSettings: Settings = {
@@ -8,6 +8,7 @@ export const defaultSettings: Settings = {
   displayWordLength: true,
   withCloseAlternatives: true,
   decorateRedacted: false,
+  articleFont: Fonts.default,
 };
 
 export const getInitialSettings = (): Settings => {
@@ -25,6 +26,8 @@ export const getInitialSettings = (): Settings => {
       settings?.withCloseAlternatives ?? defaultSettings.withCloseAlternatives,
     decorateRedacted:
       settings?.decorateRedacted ?? defaultSettings.decorateRedacted,
+    articleFont:
+      settings?.articleFont ?? defaultSettings.articleFont,
   };
 };
 

@@ -65,11 +65,19 @@ export type ArticleStats = {
   distribution: Record<number, number>;
 };
 
+export enum Fonts {
+  default,
+  MiriamLibre,
+  Alef,
+  NotoSansHebrew,
+}
+
 export type Settings = {
   lightMode: boolean;
   displayWordLength: boolean;
   withCloseAlternatives: boolean;
   decorateRedacted: boolean;
+  articleFont: Fonts;
 };
 
 export type SettingsState = {
