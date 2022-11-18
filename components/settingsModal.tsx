@@ -4,6 +4,7 @@ import Modal from "@caviardeul/components/modal";
 import { SettingsContext, defaultSettings } from "@caviardeul/utils/settings";
 import { FontMap } from "./fontManager";
 import { Fonts } from "@caviardeul/types";
+import { FaFont } from "react-icons/fa";
 
 const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
   open,
@@ -80,7 +81,7 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
             checked={decorateRedacted}
             onChange={handleToggleDecorateRedacted}
           />
-          הפעל מצב השחרה מעוצב (עלול לפגוע בביצועים)
+          הפעל מצב השחרה מעוצב
         </label>
         <br />
         <label>
@@ -93,9 +94,12 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
         </label>
         <hr></hr>
         <label>
-          גופן
+          <FaFont />
+          {" "}
+          גופן מאמר
+          {" "}
           <select 
-            defaultValue={settings?.articleFont ?? Fonts.default}
+            defaultValue={articleFont ?? Fonts.default}
             onChange={ e => onChangeSettings({ articleFont: e.target.value as unknown as Fonts }) } >
             { Object.entries(FontMap).map( (v) => 
               <option 

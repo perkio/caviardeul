@@ -22,7 +22,7 @@ const notoLoader = Noto_Sans_Hebrew({
 
 export const FontMap: Record<Fonts, Pick<FontModule, 'variable'|'style' > & { label: string }> = {
   [Fonts.default]: {
-    label: "מונוספייס",
+    label: "מונוספייס (ברירת מחדל)",
     style: { fontFamily: "monospace" },
   },
   
