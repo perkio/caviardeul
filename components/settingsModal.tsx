@@ -10,8 +10,14 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
   onClose,
 }) => {
   const { settings, onChangeSettings } = useContext(SettingsContext);
-  const { lightMode, displayWordLength, withCloseAlternatives, decorateRedacted, articleFont } =
-    settings ?? defaultSettings;
+  const { 
+    lightMode,
+    displayWordLength,
+    withCloseAlternatives,
+    decorateRedacted,
+    hideZeroHits,
+    articleFont,
+  } = settings ?? defaultSettings;
 
   const handleToggleLightMode = useCallback(() => {
     onChangeSettings({ lightMode: !lightMode });
@@ -28,6 +34,10 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
   const handleToggleDecorateRedacted = useCallback(() => {
     onChangeSettings({ decorateRedacted: !decorateRedacted });
   }, [decorateRedacted, onChangeSettings]);
+
+  const handleToggleHideZeroHits = useCallback(() => {
+    onChangeSettings({ hideZeroHits: !hideZeroHits });
+  }, [hideZeroHits, onChangeSettings]);
 
   if (!open) {
     return null;
@@ -73,6 +83,14 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
           הפעל מצב השחרה מעוצב (עלול לפגוע בביצועים)
         </label>
         <br />
+        <label>
+          <input
+            type="checkbox"
+            checked={hideZeroHits}
+            onChange={handleToggleHideZeroHits}
+          />
+          הסתר ניחושים ללא מופעים
+        </label>
         <hr></hr>
         <label>
           גופן

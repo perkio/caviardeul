@@ -8,6 +8,7 @@ export const defaultSettings: Settings = {
   displayWordLength: true,
   withCloseAlternatives: true,
   decorateRedacted: false,
+  hideZeroHits: false,
   articleFont: Fonts.default,
 };
 
@@ -26,6 +27,8 @@ export const getInitialSettings = (): Settings => {
       settings?.withCloseAlternatives ?? defaultSettings.withCloseAlternatives,
     decorateRedacted:
       settings?.decorateRedacted ?? defaultSettings.decorateRedacted,
+    hideZeroHits:
+      settings?.hideZeroHits ?? defaultSettings.hideZeroHits,
     articleFont:
       settings?.articleFont ?? defaultSettings.articleFont,
   };
