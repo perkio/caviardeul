@@ -70,6 +70,15 @@ export enum Fonts {
   MiriamLibre,
   Alef,
   NotoSansHebrew,
+  Cousine,
+  Rubik,
+  Arimo,
+  Roboto,
+  Open_Sans,
+  IBM_Plex_Sans_Hebrew,
+  Assistant,
+  Heebo,
+  Fredoka,
 }
 
 export type Settings = {
