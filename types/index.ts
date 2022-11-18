@@ -70,6 +70,7 @@ export type Settings = {
   displayWordLength: boolean;
   withCloseAlternatives: boolean;
   decorateRedacted: boolean;
+  hideZeroHits: boolean;
 };
 
 export type SettingsState = {

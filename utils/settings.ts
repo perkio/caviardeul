@@ -8,6 +8,7 @@ export const defaultSettings: Settings = {
   displayWordLength: true,
   withCloseAlternatives: true,
   decorateRedacted: false,
+  hideZeroHits: false,
 };
 
 export const getInitialSettings = (): Settings => {
@@ -25,6 +26,8 @@ export const getInitialSettings = (): Settings => {
       settings?.withCloseAlternatives ?? defaultSettings.withCloseAlternatives,
     decorateRedacted:
       settings?.decorateRedacted ?? defaultSettings.decorateRedacted,
+    hideZeroHits:
+      settings?.hideZeroHits ?? defaultSettings.hideZeroHits,
   };
 };
 

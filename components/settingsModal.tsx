@@ -8,7 +8,7 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
   onClose,
 }) => {
   const { settings, onChangeSettings } = useContext(SettingsContext);
-  const { lightMode, displayWordLength, withCloseAlternatives, decorateRedacted } =
+  const { lightMode, displayWordLength, withCloseAlternatives, decorateRedacted, hideZeroHits } =
     settings ?? defaultSettings;
 
   const handleToggleLightMode = useCallback(() => {
@@ -27,6 +27,9 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
     onChangeSettings({ decorateRedacted: !decorateRedacted });
   }, [decorateRedacted, onChangeSettings]);
 
+  const handleToggleHideZeroHits = useCallback(() => {
+    onChangeSettings({ hideZeroHits: !hideZeroHits });
+  }, [hideZeroHits, onChangeSettings]);
 
   if (!open) {
     return null;
@@ -70,6 +73,15 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
             onChange={handleToggleDecorateRedacted}
           />
           הפעל מצב השחרה מעוצב (עלול לפגוע בביצועים)
+        </label>
+        <br />
+        <label>
+          <input
+            type="checkbox"
+            checked={hideZeroHits}
+            onChange={handleToggleHideZeroHits}
+          />
+          הסתר ניחושים ללא מופעים
         </label>
       </div>
     </Modal>
