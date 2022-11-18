@@ -32,7 +32,8 @@ const HistoryContainer: React.FC<{
         </thead>
         <tbody>
           {history
-            .map(([word, count], i) => [word, count, i])
+            // capture original index
+            .map<[string, number, number]>(([word, count], i) => [word, count, i])
             .filter(([_, count, i]) =>
                 !settings?.hideZeroHits ||
                 count > 0 ||
