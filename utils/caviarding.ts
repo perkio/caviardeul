@@ -195,6 +195,10 @@ const removeDiacritics = (word: string): string => {
   return latinize(word);
 };
 
+const removeHebrewNikud = (word: string): string => {
+  return word.replace(/([\u05B0-\u05BD]|[\u05BF-\u05C7])/g,"");
+}
+
 export const standardizeText = (word: string): string => {
-  return removeDiacritics(word.toLocaleLowerCase());
+  return removeHebrewNikud(removeDiacritics(word.toLocaleLowerCase()));
 };
