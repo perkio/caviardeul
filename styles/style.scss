@@ -460,7 +460,7 @@ main {
       background-color: var(--color-text);
       border: solid 1px var(--color-text);
       position: relative;
-      font-family: monospace;
+      font-family: $articleFont;
 
       &.decorate-redacted {
         &:nth-of-type(5n) {
