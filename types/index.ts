@@ -68,7 +68,7 @@ export type ArticleStats = {
 export enum Fonts {
   default,
   FreeMono,
-  // Cousine,
+  Cousine,
   // LiberationMono,
   // EversonMono,
 }

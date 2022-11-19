@@ -1,9 +1,9 @@
 import { Fonts } from '@caviardeul/types';
 import localFont from '@next/font/local';
 
-// import { 
-//   Cousine,
-// } from "@next/font/google";
+import { 
+  Cousine,
+} from "@next/font/google";
 
 import { NextFont } from '@next/font/dist/types';
 
@@ -35,20 +35,9 @@ const freeMono = localFont({
 //       weight: '700',
 //       style: 'normal',
 //     },
-//     {
-//       path: '../fonts/LiberationMono-Italic.ttf',
-//       weight: '400',
-//       style: 'italic',
-//     },
-//     {
-//       path: '../fonts/LiberationMono-BoldItalic.ttf',
-//       weight: '700',
-//       style: 'italic',
-//     }
 //   ],
 //   fallback: ["monospace"] 
 // });
-
 
 // const eversonMono = localFont({ 
 //   src: [
@@ -62,24 +51,14 @@ const freeMono = localFont({
 //       weight: '700',
 //       style: 'normal',
 //     },
-//     {
-//       path: '../fonts/Everson Mono Oblique.ttf',
-//       weight: '400',
-//       style: 'italic',
-//     },
-//     {
-//       path: '../fonts/Everson Mono Bold Oblique.ttf',
-//       weight: '700',
-//       style: 'italic',
-//     }
 //   ],
 //   fallback: ["monospace"] 
 // });
 
-// const cousine = Cousine({
-//   weight: "400",
-//   subsets: ["hebrew", "latin"]
-// });
+const cousine = Cousine({
+  weight: ['400', '700'],
+  subsets: ["hebrew", "latin"]
+});
 
 export const FontMap: Record<Fonts, Pick<NextFont, 'style' > & { label: string }> = {
   [Fonts.default]: {
@@ -89,7 +68,12 @@ export const FontMap: Record<Fonts, Pick<NextFont, 'style' > & { label: string }
 
   [Fonts.FreeMono]: {
     ...freeMono,
-    label: "FreeMono",
+    label: "GNU FreeMono",
+  },
+
+  [Fonts.Cousine]: {
+    ...cousine,
+    label: "Cousine",
   },
 
   // [Fonts.LiberationMono]: {
@@ -100,10 +84,5 @@ export const FontMap: Record<Fonts, Pick<NextFont, 'style' > & { label: string }
   // [Fonts.EversonMono]: {
   //   ...eversonMono,
   //   label: "EversonMono",
-  // },
-
-  // [Fonts.Cousine]: {
-  //   ...cousine,
-  //   label: "Cousine",
   // },
 }
