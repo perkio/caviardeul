@@ -1,157 +1,109 @@
-import { FontModule } from 'next/font';
 import { Fonts } from '@caviardeul/types';
+import localFont from '@next/font/local';
 
-import { 
-  Alef,
-  Arimo,
-  Roboto,
-  Rubik,
-  Miriam_Libre,
-  Noto_Sans_Hebrew,
-  Cousine,
-  Open_Sans,
-  IBM_Plex_Sans_Hebrew,
-  Assistant,
-  Heebo,
-  Fredoka,
-} from "@next/font/google"
+// import { 
+//   Cousine,
+// } from "@next/font/google";
 
-const miriamLoader = Miriam_Libre({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
+import { NextFont } from '@next/font/dist/types';
+
+const freeMono = localFont({ 
+  src: [
+    {
+      path: '../fonts/FreeMono.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/FreeMonoBold.woff',
+      weight: '700',
+      style: 'normal',
+    }
+  ],
+  fallback: ["monospace"] 
 });
 
-const alefLoader = Alef({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
-
-const notoLoader = Noto_Sans_Hebrew({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
-
-const cousineLoader = Cousine({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
-
-
-const rubikLoader = Rubik({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
-
-const arimoLoader = Arimo({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
-
-const robotoLoader = Roboto({
-  variable: '--article-font',
-  weight: "400",
-});
+// const liberationMono = localFont({ 
+//   src: [
+//     {
+//       path: '../fonts/LiberationMono-Regular.ttf',
+//       weight: '400',
+//       style: 'normal',
+//     },
+//     {
+//       path: '../fonts/LiberationMono-Bold.ttf',
+//       weight: '700',
+//       style: 'normal',
+//     },
+//     {
+//       path: '../fonts/LiberationMono-Italic.ttf',
+//       weight: '400',
+//       style: 'italic',
+//     },
+//     {
+//       path: '../fonts/LiberationMono-BoldItalic.ttf',
+//       weight: '700',
+//       style: 'italic',
+//     }
+//   ],
+//   fallback: ["monospace"] 
+// });
 
 
-const openSansLoader = Open_Sans({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
+// const eversonMono = localFont({ 
+//   src: [
+//     {
+//       path: '../fonts/Everson Mono.ttf',
+//       weight: '400',
+//       style: 'normal',
+//     },
+//     {
+//       path: '../fonts/Everson Mono Bold.ttf',
+//       weight: '700',
+//       style: 'normal',
+//     },
+//     {
+//       path: '../fonts/Everson Mono Oblique.ttf',
+//       weight: '400',
+//       style: 'italic',
+//     },
+//     {
+//       path: '../fonts/Everson Mono Bold Oblique.ttf',
+//       weight: '700',
+//       style: 'italic',
+//     }
+//   ],
+//   fallback: ["monospace"] 
+// });
 
-const ibmPlexSansLoader = IBM_Plex_Sans_Hebrew({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
+// const cousine = Cousine({
+//   weight: "400",
+//   subsets: ["hebrew", "latin"]
+// });
 
-const assistantLoader = Assistant({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
-
-const heeboLoader = Heebo({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
-
-const fredokaLoader = Fredoka({
-  variable: '--article-font',
-  weight: "400",
-  subsets: ["hebrew"]
-});
-
-export const FontMap: Record<Fonts, Pick<FontModule, 'variable'|'style' > & { label: string }> = {
+export const FontMap: Record<Fonts, Pick<NextFont, 'style' > & { label: string }> = {
   [Fonts.default]: {
-    label: "מונוספייס (ברירת מחדל)",
+    label: "ברירת מחדל",
     style: { fontFamily: "monospace" },
   },
-  
-  [Fonts.MiriamLibre]: {
-    ...miriamLoader,
-    label: "מרים ליברה",
+
+  [Fonts.FreeMono]: {
+    ...freeMono,
+    label: "FreeMono",
   },
 
-  [Fonts.Alef]: {
-    ...alefLoader,
-    label: "אלף",
-  },
+  // [Fonts.LiberationMono]: {
+  //   ...liberationMono,
+  //   label: "LiberationMono",
+  // },
 
-  [Fonts.NotoSansHebrew]: {
-    ...notoLoader,
-    label: "נוטו סנס",
-  },
+  // [Fonts.EversonMono]: {
+  //   ...eversonMono,
+  //   label: "EversonMono",
+  // },
 
-  [Fonts.Cousine]: {
-    ...cousineLoader,
-    label: "קוזין",
-  },
-
-  [Fonts.Rubik]: {
-    ...rubikLoader,
-    label: "רוביק",
-  },
-
-  [Fonts.Roboto]: {
-    ...robotoLoader,
-    label: "רובוטו",
-  },
-
-  [Fonts.Arimo]: {
-    ...arimoLoader,
-    label: "ארימו",
-  },
-
-  [Fonts.Open_Sans]: {
-    ...openSansLoader,
-    label: "אופן סאנס",
-  },
-
-  [Fonts.IBM_Plex_Sans_Hebrew]: {
-    ...ibmPlexSansLoader,
-    label: "IBM Plex Sans",
-  },
-
-  [Fonts.Assistant]: {
-    ...assistantLoader,
-    label: "אסיסטנט",
-  },
-
-  [Fonts.Heebo]: {
-    ...heeboLoader,
-    label: "היבו",
-  },
-
-  [Fonts.Fredoka]: {
-    ...fredokaLoader,
-    label: "פרדוקה",
-  },
+  // [Fonts.Cousine]: {
+  //   ...cousine,
+  //   label: "Cousine",
+  // },
 }

@@ -67,18 +67,10 @@ export type ArticleStats = {
 
 export enum Fonts {
   default,
-  MiriamLibre,
-  Alef,
-  NotoSansHebrew,
-  Cousine,
-  Rubik,
-  Arimo,
-  Roboto,
-  Open_Sans,
-  IBM_Plex_Sans_Hebrew,
-  Assistant,
-  Heebo,
-  Fredoka,
+  FreeMono,
+  // Cousine,
+  // LiberationMono,
+  // EversonMono,
 }
 
 export type Settings = {

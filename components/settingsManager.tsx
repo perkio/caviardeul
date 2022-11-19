@@ -28,7 +28,7 @@ const SettingsManager: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   const setFont = useCallback((font: Fonts) => {
-    const fontVar = FontMap[font].style.fontFamily ?? "monospace";
+    const fontVar = FontMap[font]?.style?.fontFamily ?? "monospace";
     document.documentElement.style.setProperty("--article-font", fontVar);
   }, []);
 
