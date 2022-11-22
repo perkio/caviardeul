@@ -30,7 +30,7 @@ const DebugPage: React.FC = () => {
           </div>
         )}
         <button onClick={() => setReady(!ready)}>
-          {ready ? "Masquer" : "Afficher"}
+          {ready ? "הסתר" : "הצג"}
         </button>
       </div>
       <div className="right-container" />
