@@ -44,13 +44,11 @@ const AboutPage: React.FC = () => {
           </p>
 
           <p>
-            מבוסס על הגרסה הצרפתית{" "}
+            קוד המקור מבוסס על הגרסה הצרפתית{" "}
             <ExternalLink href="https://caviardeul.fr">
              Caviardeul
             </ExternalLink>
             .
-          </p>
-          <p>
             פותח במקור ע&quot;י {" "}
             <ExternalLink href="https://julienc.io">
               Julien Chaumont
@@ -86,7 +84,11 @@ const AboutPage: React.FC = () => {
             <ExternalLink href="https://github.com/perkio/redactle-he/issues">
               <i>בעיות</i> ב-GitHub
             </ExternalLink>
-            .
+            <br/>
+            פותח ע&quot;י{" "}
+            <ExternalLink href="https://twitter.com/xperki">
+              עמית
+            </ExternalLink>
           </p>
         </div>
         <div className="right-container">
