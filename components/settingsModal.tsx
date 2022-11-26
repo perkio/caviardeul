@@ -51,6 +51,15 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
         <label>
           <input
             type="checkbox"
+            checked={hideZeroHits}
+            onChange={handleToggleHideZeroHits}
+          />
+          הסתר ניחושים ללא מופעים
+        </label>
+        <br />
+        <label>
+          <input
+            type="checkbox"
             checked={!lightMode}
             onChange={handleToggleLightMode}
           />
@@ -82,15 +91,6 @@ const SettingsModal: React.FC<{ open: boolean; onClose: () => void }> = ({
             onChange={handleToggleDecorateRedacted}
           />
           הפעל מצב השחרה מעוצב
-        </label>
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            checked={hideZeroHits}
-            onChange={handleToggleHideZeroHits}
-          />
-          הסתר ניחושים ללא מופעים
         </label>
         <hr></hr>
         <label>
