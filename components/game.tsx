@@ -19,6 +19,7 @@ import {
   countOccurrences,
   isCommonWord,
   isWord,
+  removeParenthetical,
   splitWords,
   standardizeText,
 } from "@caviardeul/utils/caviarding";
@@ -47,7 +48,8 @@ const Game: React.FC<{
     settings?.withCloseAlternatives ?? defaultSettings.withCloseAlternatives;
 
   const titleWords = useMemo(() => {
-    return splitWords(pageName).filter(isWord).map(standardizeText);
+    return splitWords(removeParenthetical(pageName))
+      .filter(isWord).map(standardizeText);
   }, [pageName]);
 
   const standardizedArticle = useMemo(() => {

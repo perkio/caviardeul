@@ -1,6 +1,14 @@
-import { countOccurrences, isWord, splitWords, standardizeText } from './caviarding';
+import { countOccurrences, isWord, removeParenthetical, splitWords, standardizeText } from './caviarding';
 
 describe("caviarding", () => {
+
+  test("removeParenthetical", () => {
+    expect(removeParenthetical("משהו (ספר)")).toStrictEqual("משהו");
+    expect(removeParenthetical("ניו יורק (מדינה)")).toStrictEqual("ניו יורק");
+    expect(removeParenthetical("קסם (מבוכים ודרקונים)")).toStrictEqual("קסם");
+    expect(removeParenthetical("דגל")).toStrictEqual("דגל");
+  })
+
   test("splitWords should support hebrew single quote", () => {
     expect(splitWords("ג'ירף")).toEqual(["ג'ירף"]);
   })

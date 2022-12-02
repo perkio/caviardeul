@@ -48,6 +48,11 @@ const separatorRegex = new RegExp(`(\"+[${punctuationListWithoutQuotes}]+|[${pun
 export const closeAlternativesSuffixes = ["ים", "ות"];
 export const closeAlternativesPrefixes = ["ב","ה","מ","כ","ש","ו","ל"];
 
+export const removeParenthetical = 
+  (text: string) => {
+    return text.replace(/(\(.*\)$)/, '').trim();
+  }
+
 export const splitWords = (
   text: string,
   isMarkdown: boolean = false
