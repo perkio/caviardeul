@@ -2,7 +2,7 @@ import { deleteCookie, getCookie } from "cookies-next";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import dynamic from "next/dynamic"
+import { QRCodeSVG } from "qrcode.react";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   FaEye,
@@ -17,10 +17,6 @@ import { ArticleInfo, ArticleInfoStats } from "@caviardeul/types";
 import { getUser } from "@caviardeul/utils/api";
 import { BASE_URL } from "@caviardeul/utils/config";
 import SaveManagement from "@caviardeul/utils/save";
-
-const QRCodeSVG = dynamic(() => import("qrcode.react"), {
-  ssr: false,
-});
 
 const Difficulty: React.FC<{ stats: ArticleInfoStats }> = ({ stats }) => {
   const { category, median } = stats;
