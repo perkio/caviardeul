@@ -29,6 +29,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   try {
     encodedArticle = await getEncodedArticle();
   } catch (error) {
+    console.error("Failed to get encoded article", error);
     return { props: { encodedArticle: null } };
   }
 
