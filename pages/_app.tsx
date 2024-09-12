@@ -3,9 +3,7 @@ import dynamic from "next/dynamic";
 import "nprogress/nprogress.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Analytics } from '@vercel/analytics/react';
-
 import Layout from "@caviardeul/components/layout";
-
 import "../styles/style.scss";
 
 const queryClient = new QueryClient();

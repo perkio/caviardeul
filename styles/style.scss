@@ -1,3 +1,5 @@
+$articleFont: var(--article-font, monospace);
+
 html,
 body {
   direction: rtl;  
@@ -431,7 +433,7 @@ main {
 
   .article-container {
     color: var(--color-text);
-    font-family: monospace;
+    font-family: $articleFont;
     font-size: 1.3rem;
     line-height: 2rem;
     height: calc(100vh - #{$navbarHeight + $footerHeight + $guessInputHeight});
@@ -458,6 +460,7 @@ main {
       background-color: var(--color-text);
       border: solid 1px var(--color-text);
       position: relative;
+      font-family: $articleFont;
 
       &.decorate-redacted {
         &:nth-of-type(5n) {

@@ -65,12 +65,21 @@ export type ArticleStats = {
   distribution: Record<number, number>;
 };
 
+export enum Fonts {
+  default,
+  FreeMono,
+  Cousine,
+  // LiberationMono,
+  // EversonMono,
+}
+
 export type Settings = {
   lightMode: boolean;
   displayWordLength: boolean;
   withCloseAlternatives: boolean;
   decorateRedacted: boolean;
   hideZeroHits: boolean;
+  articleFont: Fonts;
 };
 
 export type SettingsState = {
